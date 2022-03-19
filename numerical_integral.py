@@ -22,7 +22,7 @@ def integral(func: str, a: float, b: float, h: float, printing=False):
         print("The integal of", func, "is equal to 0, because the lower and the upper bound are equal")
         return 0
     
-    if h > b-a:
+    if h > (b-a)/10:
         print("The partition is not small enough!")
         return
     
@@ -54,4 +54,5 @@ def integral(func: str, a: float, b: float, h: float, printing=False):
         print("The area of", func, "from", a, "to", '%.3g'%b, "equals to", '%.3g'%T)
     return T
 
-integral("np.sin(x)", 0, np.pi, 0.01, printing=True)
+#example:
+#integral("np.sin(x)", 0, np.pi, 0.01, printing=True)
