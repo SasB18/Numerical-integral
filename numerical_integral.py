@@ -14,9 +14,12 @@ def integral(func: str, a: float, b: float, h: float, printing=False):
     """
 
     # Fixing possible errors
+    
+    swap = False
     if a > b:
-        print("The lower bound has to be smaller than the upper bound!")
-        return
+        # If the boundries are switched, it swaps them and sets 'swap' to True
+        a, b = b, a
+        swap = True
 
     if a == b:
         print("The integal of", func, "is equal to 0, because the lower and the upper bound are equal")
@@ -51,7 +54,12 @@ def integral(func: str, a: float, b: float, h: float, printing=False):
     
     # Printing area
     if printing:
-        print("The area of", func, "from", a, "to", '%.3g'%b, "equals to", '%.3g'%T)
+        print("The area of", func, "from", '.3g'%a, "to", '%.3g'%b, "equals to", '%.3g'%T)
+    
+    # If the boundries have been swapped, it returns the -1 times the area
+    if swap:
+        return -T
+        
     return T
 
 #example:
