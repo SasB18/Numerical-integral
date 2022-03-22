@@ -22,7 +22,7 @@ def integral(func: str, a: float, b: float, h: float, printing=False):
         swap = True
 
     if a == b:
-        print("The integal of", func, "is equal to 0, because the lower and the upper bound are equal")
+        print("The integral of", func, "is equal to 0, because the lower and the upper bound are equal")
         return 0
     
     if h > (b-a)/10:
